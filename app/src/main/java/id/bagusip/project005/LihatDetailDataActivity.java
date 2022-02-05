@@ -91,11 +91,11 @@ public class LihatDetailDataActivity extends AppCompatActivity {
             String alamat = object.getString(Konfigurasi.TAG_JSON_ALAMAT);
             String status = object.getString(Konfigurasi.TAG_JSON_status);
 
-            edit_id.setText(id);
-            edit_nama.setText(nama);
-            edit_no_rekening.setText(no_rekening);
-            edit_alamat.setText(alamat);
-            edit_status.setText(status);
+            edit_id.setText("ID : "+id);
+            edit_nama.setText("Nama : "+nama);
+            edit_no_rekening.setText("No rekening : "+no_rekening);
+            edit_alamat.setText("Alamat : "+alamat);
+            edit_status.setText("Status : "+status);
 
         } catch (Exception ex) {
             ex.printStackTrace();
