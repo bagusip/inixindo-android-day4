@@ -13,15 +13,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        startActivity(new Intent(MainActivity.this, LihatDataActivity.class));
 
         btn_lihat_data = findViewById(R.id.btn_lihat_data);
 
-        btn_lihat_data.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,LihatDataActivity.class));
-            }
-        });
+
     }
 }

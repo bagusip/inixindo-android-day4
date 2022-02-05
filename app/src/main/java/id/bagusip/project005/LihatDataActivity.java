@@ -57,6 +57,13 @@ public class LihatDataActivity extends AppCompatActivity implements AdapterView.
 
             @Override
             protected String doInBackground(Void... voids) {
+                try{
+                    Thread.sleep(10000);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
                 HttpHandler handler = new HttpHandler();
                 String result = handler.sendGetResponse(Konfigurasi.URL_GET_ALL);
                 return result;

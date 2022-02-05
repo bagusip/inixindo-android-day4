@@ -7,7 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.EditText;
 
@@ -55,6 +55,13 @@ public class LihatDetailDataActivity extends AppCompatActivity {
 
             @Override
             protected String doInBackground(Void... voids) {
+                try{
+                    Thread.sleep(10000);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
                 HttpHandler handler = new HttpHandler();
                 String result = handler.sendGetResponse(Konfigurasi.URL_GET_DETAIL, id);
                 return result;
@@ -94,4 +101,15 @@ public class LihatDetailDataActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
+    public void timerDelayRemoveDialog(long time, final ProgressDialog d) {
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                d.dismiss();
+            }
+        }, time);
+    }
+
+
 }
+
