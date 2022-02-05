@@ -97,12 +97,14 @@ public class LihatDataActivity extends AppCompatActivity implements AdapterView.
                 JSONObject object = result.getJSONObject(i);
                 String id = object.getString(Konfigurasi.TAG_JSON_ID);
                 String nama = object.getString(Konfigurasi.TAG_JSON_NAMA);
+                String no_rekening = object.getString(Konfigurasi.TAG_JSON_NOREK);
 
-                HashMap<String, String> pegawai = new HashMap<>();
-                pegawai.put(Konfigurasi.TAG_JSON_ID, id);
-                pegawai.put(Konfigurasi.TAG_JSON_NAMA, nama);
+                HashMap<String, String> nasabah = new HashMap<>();
+                nasabah.put(Konfigurasi.TAG_JSON_ID, id);
+                nasabah.put(Konfigurasi.TAG_JSON_NAMA, nama);
+                nasabah.put(Konfigurasi.TAG_JSON_NOREK, no_rekening);
                 // ubah format json menjadi array list
-                list.add(pegawai);
+                list.add(nasabah);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -112,8 +114,8 @@ public class LihatDataActivity extends AppCompatActivity implements AdapterView.
         ListAdapter adapter = new SimpleAdapter(
                 getApplicationContext(), list,
                 R.layout.activity_list_item,
-                new String[]{Konfigurasi.TAG_JSON_ID, Konfigurasi.TAG_JSON_NAMA},
-                new int[]{R.id.txt_id, R.id.txt_name}
+                new String[]{Konfigurasi.TAG_JSON_ID, Konfigurasi.TAG_JSON_NAMA, Konfigurasi.TAG_JSON_NOREK},
+                new int[]{R.id.txt_id, R.id.txt_name, R.id.txt_norekening}
         );
         list_view.setAdapter(adapter);
     }

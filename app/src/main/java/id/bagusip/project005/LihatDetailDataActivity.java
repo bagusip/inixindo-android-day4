@@ -15,7 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class LihatDetailDataActivity extends AppCompatActivity {
-    EditText edit_id, edit_nama, edit_jabatan, edit_gaji;
+    EditText edit_id, edit_nama, edit_no_rekening, edit_alamat, edit_status;
     String id;
 
     @Override
@@ -24,12 +24,13 @@ public class LihatDetailDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lihat_detail_data);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Detail Data Pegawai");
+        getSupportActionBar().setTitle("Detail Data Nasabah");
 
         edit_id = findViewById(R.id.edit_id);
         edit_nama = findViewById(R.id.edit_nama);
-        edit_jabatan = findViewById(R.id.edit_jabatan);
-        edit_gaji = findViewById(R.id.edit_gaji);
+        edit_no_rekening = findViewById(R.id.edit_no_rekening);
+        edit_alamat = findViewById(R.id.edit_alamat);
+        edit_status = findViewById(R.id.edit_status);
 
         // menerima intent dari class LihatDataActivity
         Intent receiveIntent = getIntent();
@@ -84,13 +85,18 @@ public class LihatDetailDataActivity extends AppCompatActivity {
             JSONArray result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
             JSONObject object = result.getJSONObject(0);
 
+            String id = object.getString(Konfigurasi.TAG_JSON_ID);
             String nama = object.getString(Konfigurasi.TAG_JSON_NAMA);
-            String jabatan = object.getString(Konfigurasi.TAG_JSON_JABATAN);
-            String gaji = object.getString(Konfigurasi.TAG_JSON_GAJI);
+            String no_rekening = object.getString(Konfigurasi.TAG_JSON_NOREK);
+            String alamat = object.getString(Konfigurasi.TAG_JSON_ALAMAT);
+            String status = object.getString(Konfigurasi.TAG_JSON_status);
 
+            edit_id.setText(id);
             edit_nama.setText(nama);
-            edit_jabatan.setText(jabatan);
-            edit_gaji.setText(gaji);
+            edit_no_rekening.setText(no_rekening);
+            edit_alamat.setText(alamat);
+            edit_status.setText(status);
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -101,15 +107,6 @@ public class LihatDetailDataActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
-    public void timerDelayRemoveDialog(long time, final ProgressDialog d) {
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                d.dismiss();
-            }
-        }, time);
-    }
-
 
 }
 
