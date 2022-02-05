@@ -3,11 +3,11 @@ package id.bagusip.project005;
 public class Konfigurasi {
 
     // url dimana web api berada
-    public static final String URL_GET_ALL = "http://192.168.1.3/nasabah/tampilSemuaPgw.php";
-    public static final String URL_GET_DETAIL = "http://192.168.1.3/nasabah/tampilPgw.php?id=";
-    public static final String URL_ADD = "http://192.168.1.3/nasabah/tambahPgw.php";
-    public static final String URL_UPDATE = "http://192.168.1.3/nasabah/updatePgw.php";
-    public static final String URL_DELETE = "http://192.168.1.3/nasabah/hapusPgw.php";
+    public static final String URL_GET_ALL = "https://dev.digi-digital.com/nasabah/tampilSemuaPgw.php";
+    public static final String URL_GET_DETAIL = "https://dev.digi-digital.com/nasabah/tampilPgw.php?id=";
+    public static final String URL_ADD = "https://dev.digi-digital.com/nasabah/tambahPgw.php";
+    public static final String URL_UPDATE = "https://dev.digi-digital.com/nasabah/updatePgw.php";
+    public static final String URL_DELETE = "https://dev.digi-digital.com/nasabah/hapusPgw.php";
 
     // munculkan key and value JSON yang muncul di browser
     public static final String KEY_NSB_ID = "id";
