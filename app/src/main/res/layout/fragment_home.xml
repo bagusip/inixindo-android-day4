@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom|center_vertical"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Selamat datang."
+            android:textAlignment="center"
+            android:textColor="#80D8FF"
+            android:textColorHint="#84FFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Aplikasi ini dibuat untuk belajar pemrograman android. Terkait DB."
+            android:textAlignment="center"
+            android:textColor="#80D8FF"
+            android:textColorHint="#84FFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="DB di hosting di server tanpa memakai local."
+            android:textAlignment="center"
+            android:textColor="#80D8FF"
+            android:textColorHint="#84FFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Read DB di hardcode untuk loading selama 10 detik."
+            android:textAlignment="center"
+            android:textColor="#80D8FF"
+            android:textColorHint="#84FFFF"
+            android:textSize="24sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

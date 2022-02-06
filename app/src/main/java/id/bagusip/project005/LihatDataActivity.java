@@ -1,13 +1,20 @@
 package id.bagusip.project005;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,16 +30,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LihatDataActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
     private ListView list_view;
     private String JSON_STRING;
+
+    private ActionBarDrawerToggle toggle;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat_data);
 
-        // memunculkan back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
 
         // penanganan list view
         list_view = findViewById(R.id.list_view);
@@ -41,6 +54,7 @@ public class LihatDataActivity extends AppCompatActivity implements AdapterView.
         // method untuk ambil data JSON
         getJSON();
     }
+
 
     private void getJSON() {
         // bantuan dari class AsyncTask

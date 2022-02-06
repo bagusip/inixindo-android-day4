@@ -23,8 +23,9 @@ public class LihatDetailDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat_detail_data);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Detail Data Nasabah");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+//        getSupportActionBar().setTitle("Detail Data Nasabah");
 
         edit_id = findViewById(R.id.edit_id);
         edit_nama = findViewById(R.id.edit_nama);
