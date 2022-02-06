@@ -27,6 +27,47 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private ActionBarDrawerToggle toggle;
     Toolbar toolbar;
+    Fragment fragment = null;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation_item, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                fragment = new HomeFragment();
+                getSupportActionBar().setTitle("Home");
+                binding.drawer.closeDrawer(GravityCompat.START);
+                callFragment(fragment);
+                break;
+            case R.id.nav_contact_us:
+                fragment = new ContactUsFragment();
+                getSupportActionBar().setTitle("Contact Us");
+                binding.drawer.closeDrawer(GravityCompat.START);
+                callFragment(fragment);
+                break;
+            case R.id.nav_about_us:
+                fragment = new AboutUsFragment();
+                getSupportActionBar().setTitle("About Us");
+                binding.drawer.closeDrawer(GravityCompat.START);
+                callFragment(fragment);
+                break;
+            case R.id.nav_profile:
+                fragment = new ProfileFragment();
+                getSupportActionBar().setTitle("Profile");
+                binding.drawer.closeDrawer(GravityCompat.START);
+                callFragment(fragment);
+                break;
+            case R.id.nav_data_nasabah:
+                startActivity(new Intent(MainActivity.this, LihatDataActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
         //salah satu menu navigasi dipilih
         binding.navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            Fragment fragment = null;
 
             //option selected draw
             @Override
